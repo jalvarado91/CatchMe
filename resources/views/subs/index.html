@@ -1,0 +1,163 @@
+<html>
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css">
+    <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+	</head>
+	<body>
+<!---------------------------------------------------------------------------------------------------
+										HOME PAGE
+----------------------------------------------------------------------------------------------------->		
+		<div data-role="page" id="home">
+			<div data-role="header">
+				<h1>CatchMe</h1>
+			</div><!-- /header -->
+			<div role="main" class="ui-content">
+				<div id="intro">
+					<p>There is only one thing worse than waiting for a bus. Missing it. Skip out on the misery of both with CatchMe. Just tell us your bus route, your bus stop and when you intend to catch it. We&#39;ll handle the rest.</p>
+				</div>
+				<div id="login">
+					<form>
+						<label>Email:</label>
+						<input type="email"></input>
+						<label>Pass:</label>
+						<input type="password"></input>
+						<a href="#subscriptions" data-role="button">Login</a>
+					</form>
+				</div>
+				<div id="register">
+					<a href="#registration" data-role="button">Register</a>
+				</div>
+			</div><!-- /content -->
+			<div data-role="footer">
+				<h4>@CatchMe</h4>
+			</div><!-- /footer -->
+		</div><!-- /page -->
+<!---------------------------------------------------------------------------------------------------
+									REGISTRATION PAGE
+----------------------------------------------------------------------------------------------------->			
+		<div data-role="page" id="registration" data-add-back-btn="true">
+			<div data-role="header">
+				<h1>Registration Form</h1>
+			</div>
+			<div data-role="main" class="ui-content">
+				<div id="registration_form">
+					<form>
+						<label>Email:</label>
+						<input type="email"></input>
+						<label>Pass:</label>
+						<input type="password"></input>
+						<label>Twitter Handle:</label>
+						<input type="password"></input>
+						<a href="#subscriptions" data-role="button">Register!</a>
+					</form>
+				</div>
+			</div>
+			<div data-role="footer">
+				
+			</div>	
+		</div>
+<!---------------------------------------------------------------------------------------------------
+								USER LOGGED ON PAGE
+----------------------------------------------------------------------------------------------------->			
+		<div data-role="page" id="subscriptions">
+			<div data-role="header">
+				<h1>My Subscriptions</h1>
+			</div>
+			<div data-role="main" class="ui-content">
+				<ul data-role="listview" data-inset="true">
+					<li><a href="#subscription">
+						<h2>Caribbean Blvd</h2>
+						<p><strong>200 Cutler Bay Local Clockwise</strong></p>
+						<p>From 12:05 a.m. to 1:15 p.m.</p>
+						<p class="ui-li-aside">Weekends</p>
+					</a></li>
+					<li><a href="#subscription">
+						<h2>SW 112 Ave TARGET Park & Ride Lot</h2>
+						<p><strong>34 Busway Flyer Northbound</strong></p>
+						<p>From 8:20 a.m. to 8:45 a.m.</p>
+						<p class="ui-li-aside">Daily</p>
+					</a></li>
+					<li><a href="#subscription">
+						<h2>Caribbean Blvd</h2>
+						<p><strong>200 Cutler Bay Local Counterclockwise</strong></p>
+						<p>From 3:45 p.m. to 4:15 p.m.</p>
+						<p class="ui-li-aside">Weekends</p>
+					</a></li>
+					<li><a href="#subscription">
+						<h2>Dadeland N Metrorail Station</h2>
+						<p><strong>288 Kendall Cruiser Northbound</strong></p>
+						<p>From 5:15 a.m. to 6:05 p.m.</p>
+						<p class="ui-li-aside">Work Week</p>
+					</a></li>
+				</ul>
+				<a href="#new_subscription" data-role="button">+</a>				
+			</div>
+			<div data-role="footer">
+				<h4>@CatchMe</h4>
+			</div>	
+		</div>
+<!---------------------------------------------------------------------------------------------------
+									NEW SUBSCRIPTION PAGE
+----------------------------------------------------------------------------------------------------->			
+		<div data-role="page" id="new_subscription">
+			<div data-role="header" data-add-back-btn="true">
+				<h1>New Subscription</h1>
+			</div>
+			<div role="main" class="ui-content">
+				<p>Bus schedules? Eeh. They rarely run on time, anyway. Let the bus notify you when it&#39;s approaching your stop. Reduce your wait time. Never miss the bus again.</p>
+				<div id="new_subscription_form">
+					<form>
+						<div class="route-select">
+						<label>Route:</label>
+						<select id="route">
+							<option value="34">Route 34 Busway Flyer</option>
+							<option value="95">Route 95 Dade Broward Express</option>
+							<option value="123">Route 123 South Beach Local</option>
+							<option value="150">Route 150 Miami Beach Airport Flyer</option>
+							<option value="200">Route 200 Cutler Bay Local</option>
+							<option value="288">Route 288 Kendall Cruiser</option>
+							<option value="297">Route 297 27th Ave Orange Max</option>
+							<option value="301">Route 301 Dade Monroe Express</option>
+							<option value="302">Route 302 Card Sound Express</option>
+						</select>
+						</div>
+						<div class="direction-select">
+							<label>Direction:</label>
+							<select id="direction">
+							</select>
+						</div>
+						<div class="stop-select">
+							<label>Stop:</label>
+							<select id="stop">
+							</select>
+						</div>
+						<div class="time-range-select">
+						<label>From Time:</label>
+						<input type="time"></input>
+						<label>To Time:</label>
+						<input type="time"></input>
+						<label>Frequency:</label>
+						<select>
+							<option value="once">Once</option>
+							<option value="monthly">Monthly</option>
+							<option value="weekly">Weekly</option>
+							<option value="weekend">Weekend</option>
+							<option value="workweek">Work Week</option>
+							<option value="daily">Daily</option>
+						</select>
+						</div>
+					</form>
+				</div>
+				<div id="subscribe">
+					<a href="#subscriptions" id="add-subscription" data-role="button">Subscribe to this route</a>
+				</div>	
+			</div>
+			<div data-role="footer">
+				<h4>@CatchMe</h4>
+			</div>
+		</div>
+	<script src="javascripts/global.js"></script>	
+	</body>
+</html>
